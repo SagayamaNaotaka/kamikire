@@ -29,10 +29,13 @@
 
   html, body {
     height: 100%; overflow: hidden;
-    background: var(--surface);
+    background: #f7f6f3;
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
+  /* キーボード表示時の暗転防止 */
+  * { -webkit-overflow-scrolling: touch; }
   body { display: flex; flex-direction: column; }
 
   /* ── HEADER ── */
@@ -93,6 +96,8 @@
     min-height: calc(100dvh - var(--header-h) - 48px);
   }
   #editor::placeholder { color: var(--text-dim); }
+  #editor:focus { outline: none; }
+  #editor-wrap { -webkit-tap-highlight-color: transparent; }
 
   /* ── TOAST ── */
   #toast {
